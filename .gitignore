@@ -1,0 +1,10 @@
+.settings
+.gradle
+.classpath
+.project
+src/main/webapp
+src/main/resources/application-dev.properties
+src/main/resources/application-prod.properties
+bin
+/build
+/bin
