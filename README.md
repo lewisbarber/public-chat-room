@@ -10,7 +10,8 @@ A public chat room built using Java Spring Framework 4, Web Sockets and STOMP. T
 * [Jackson](http://wiki.fasterxml.com/JacksonInFiveMinutes) - used for JSON serialization
 * [JUnit](http://junit.org/) & [Mockito](https://code.google.com/p/mockito/) - used for unit testing
 * [Gradle](http://www.gradle.org/) - used for dependency management
-
+* [MySQL](http://www.mysql.com/) - used to persist application data
+* [jQuery](http://jquery.com/) - used to build an interactive web front-end
 
 Configuration
 -------------
