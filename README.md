@@ -91,4 +91,4 @@ Export the application as a WAR file and deploy to Apache Tomcat 7 (or your pref
 Demo
 ----
 
-A demo of the application is running at http://public-chat.lewisbarber.me
+A demo of the application is running at http://demo.lewisbarber.me/PublicChatRoom
