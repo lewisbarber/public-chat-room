@@ -3,6 +3,8 @@ Public Chat Room
 
 A public chat room built using Java Spring Framework 4, Web Sockets and STOMP. This web application uses the following technologies:
 
+__**Server**__
+
 * [Spring Data](http://projects.spring.io/spring-data/) - used as a wrapper on top of Hibernate to simplify data-access implementation
 * [Spring Web MVC](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html) - used to host the chat service as a web application
 * [Spring Messaging](http://spring.io/guides/gs/messaging-stomp-websocket/) - used for sending / receiving STOMP messages
@@ -10,7 +12,14 @@ A public chat room built using Java Spring Framework 4, Web Sockets and STOMP. T
 * [Jackson](http://wiki.fasterxml.com/JacksonInFiveMinutes) - used for JSON serialization
 * [JUnit](http://junit.org/) & [Mockito](https://code.google.com/p/mockito/) - used for unit testing
 * [Gradle](http://www.gradle.org/) - used for dependency management
+ 
+__**Database**__
 
+* [MySQL](http://www.mysql.com/) - used to persist application data
+ 
+__**Web Client**__
+
+* [jQuery](http://jquery.com/) - used to build an interactive web front-end
 
 Configuration
 -------------
@@ -90,4 +99,4 @@ Export the application as a WAR file and deploy to Apache Tomcat 7 (or your pref
 Demo
 ----
 
-A demo of the application is running at http://public-chat.lewisbarber.me
+A demo of the application is running at http://demo.lewisbarber.me/chat
