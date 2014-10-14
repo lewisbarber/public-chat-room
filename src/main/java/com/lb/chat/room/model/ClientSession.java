@@ -24,6 +24,9 @@ public class ClientSession {
 	@Column(name = "dateAdded", nullable = false)
 	private Date dateAdded = new Date();
 
+	@Column(name = "idle", nullable = false)
+	private Boolean idle = false;
+
 	public ClientSession() {
 
 	}
@@ -58,6 +61,14 @@ public class ClientSession {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public Boolean getIdle() {
+		return idle;
+	}
+
+	public void setIdle(Boolean idle) {
+		this.idle = idle;
 	}
 
 }

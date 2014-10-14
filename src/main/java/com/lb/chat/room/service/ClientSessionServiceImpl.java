@@ -14,6 +14,8 @@ import com.lb.chat.room.model.ClientSession;
 import com.lb.chat.room.model.Message;
 import com.lb.chat.room.repository.ClientSessionRepository;
 import com.lb.chat.room.repository.MessageRepository;
+import com.lb.chat.room.response.CheckUsernameResponse;
+import com.lb.chat.room.response.FetchClientSessionsResponse;
 import com.lb.chat.room.response.RemoveClientSessionResponse;
 import com.lb.chat.room.response.SaveNewClientSessionResponse;
 
@@ -69,6 +71,12 @@ public class ClientSessionServiceImpl implements ClientSessionService {
 
 			clientSessionRepository.save(newClientSession);
 
+			List<ClientSession> clientSessions = clientSessionRepository
+					.findAll();
+
+			messagingTemplate.convertAndSend("/client-sessions/receive",
+					clientSessions);
+
 		}
 
 		return response;
@@ -104,7 +112,43 @@ public class ClientSessionServiceImpl implements ClientSessionService {
 			messageRepository.save(clientMessages);
 			clientSessionRepository.delete(session);
 
+			List<ClientSession> clientSessions = clientSessionRepository
+					.findAll();
+
+			messagingTemplate.convertAndSend("/client-sessions/receive",
+					clientSessions);
+
 		}
+
+		return response;
+
+	}
+
+	@Override
+	public CheckUsernameResponse checkUsername(String username) {
+
+		CheckUsernameResponse response = new CheckUsernameResponse();
+
+		ClientSession clientSession = clientSessionRepository
+				.findByUsername(username);
+
+		if (clientSession != null) {
+			response.setUsernameInUse(true);
+		}
+
+		return response;
+
+	}
+
+	@Override
+	public FetchClientSessionsResponse fetchClientSessions() {
+
+		FetchClientSessionsResponse response = new FetchClientSessionsResponse();
+
+		List<ClientSession> clientSessions = clientSessionRepository.findAll();
+
+		messagingTemplate.convertAndSend("/client-sessions/receive",
+				clientSessions);
 
 		return response;
 
