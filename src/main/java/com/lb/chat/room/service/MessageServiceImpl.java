@@ -257,4 +257,18 @@ public class MessageServiceImpl implements MessageService {
 
 	}
 
+	@Override
+	public void convertAndSend(String path, List<?> list) {
+
+		messagingTemplate.convertAndSend(path, list);
+
+	}
+
+	@Override
+	public void convertAndSend(String path, Object object) {
+
+		messagingTemplate.convertAndSend(path, object);
+
+	}
+
 }

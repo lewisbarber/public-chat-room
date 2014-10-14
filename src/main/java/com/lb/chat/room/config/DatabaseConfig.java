@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @ComponentScan(basePackages = { "com.lb.chat.room.service",
 		"com.lb.chat.room.repository", "com.lb.chat.room.controller" })
-@PropertySource("classpath:application-dev.properties")
+@PropertySource("classpath:application-prod.properties")
 public class DatabaseConfig {
 
 	@Autowired

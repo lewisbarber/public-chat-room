@@ -5,7 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Strings;
@@ -33,7 +32,7 @@ public class ClientSessionServiceImpl implements ClientSessionService {
 	MessageRepository messageRepository;
 
 	@Autowired
-	SimpMessagingTemplate messagingTemplate;
+	MessageService messageService;
 
 	@Override
 	public SaveNewClientSessionResponse saveNewClientSession(String login,
@@ -74,7 +73,7 @@ public class ClientSessionServiceImpl implements ClientSessionService {
 			List<ClientSession> clientSessions = clientSessionRepository
 					.findAll();
 
-			messagingTemplate.convertAndSend("/client-sessions/receive",
+			messageService.convertAndSend("/client-sessions/receive",
 					clientSessions);
 
 		}
@@ -115,7 +114,7 @@ public class ClientSessionServiceImpl implements ClientSessionService {
 			List<ClientSession> clientSessions = clientSessionRepository
 					.findAll();
 
-			messagingTemplate.convertAndSend("/client-sessions/receive",
+			messageService.convertAndSend("/client-sessions/receive",
 					clientSessions);
 
 		}
@@ -147,7 +146,7 @@ public class ClientSessionServiceImpl implements ClientSessionService {
 
 		List<ClientSession> clientSessions = clientSessionRepository.findAll();
 
-		messagingTemplate.convertAndSend("/client-sessions/receive",
+		messageService.convertAndSend("/client-sessions/receive",
 				clientSessions);
 
 		return response;
