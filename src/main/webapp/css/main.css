@@ -1,0 +1,135 @@
+body {
+	font-family:'Ropa Sans';
+}
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+}
+input[type='text'], textarea {
+	padding:0.5rem;
+	width:500px;
+	border:1px solid #BBB;
+	background:#FFF;
+	font-family:'Ropa Sans';
+	font-size:14px;
+	outline:none;
+	resize:none;
+}
+input[type='text'].disabled, textarea.disabled {
+	background:#EEE;
+}
+textarea {
+	height:80px;
+	vertical-align:top;
+	margin-right:5px;
+}
+.wrapper {
+	width:100%;
+	margin-top:50px;
+}
+.inner {
+	width:90%;
+	margin:0 auto;
+}
+button {
+	border:1px solid #BBB;
+	background:#CCC;
+	color:#111;
+	font-family:'Ropa Sans';
+	padding:0.5rem;
+	font-size:14px;
+	cursor:pointer;
+	outline:none;
+}
+button:hover {
+	background:#C1C1C1;
+}
+button:active {
+	background:#BBBBBB;
+}
+button.disabled, button.disabled:hover, button.disabled:active {
+	color:#707070;
+	background:#D5D5D5;
+	border:1px solid #CCCCCC;
+	cursor:auto;
+}
+.messages {
+	border:1px solid #BBB;
+	background:#FFF;
+	height:350px;
+	overflow-y:auto;
+	padding:10px;
+	color:#000000;
+}
+.messages.disabled {
+	background:#EEE;
+	color:#707070;
+}
+.messages .message {
+	padding:5px;
+}
+.main-holder {
+	margin-top:15px;
+}
+.messages-holder {
+	width: calc(100% - 280px);
+	display:inline-block;
+	vertical-align:top;
+	margin-right:10px;
+}
+.connected-users {
+	width:250px;
+	display:inline-block;
+	vertical-align:top;
+	background:#F5F5F5;
+	color:#404040;
+	border:1px solid #D5D5D5;
+	padding:5px;
+	height: 360px;
+	overflow-y: auto;
+}
+.user {
+	padding:2px 5px;
+}
+.msg-username {
+	color:#707070;
+}
+.seen-by {
+	font-size:11px;
+	color:#999999;
+	padding:0px 5px;	
+}
+.error-msg {
+	color:#BE2625;
+	margin:5px 0px 10px 0px;
+	padding:5px;
+	background:#FFCCCC;
+	border:1px solid #EEB4B4;
+	display:none;
+}
+.compose-message {
+	margin-top:10px;
+}
+.connected-users .title {
+	padding:2px 5px;
+	font-style:italic;
+	color:#707070;
+	margin-bottom:2px;
+}
+.connected-users .fa-circle-o {
+	font-size: 10px;
+	position: relative;
+	top: -1px;
+}
+.fa-circle-o.idle {
+	color:#EE7600;
+}
+.fa-circle-o.online {
+	color:#4DBD33;
+}
+#join-convo-msg {
+	color:#707070;
+	font-size:13px;
+	font-style:italic;
+	padding:2px 5px;
+}
