@@ -95,8 +95,3 @@ ALTER TABLE `message`
 ###5) Deploy WAR File###
 
 Export the application as a WAR file and deploy to Apache Tomcat 7 (or your preferred application server that supports Java Servlet API 3.0 or greater).
-
-Demo
-----
-
-A demo of the application is running at http://demo.lewisbarber.me/chat
